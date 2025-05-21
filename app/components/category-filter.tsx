@@ -38,7 +38,7 @@ export function CategoryFilter() {
           key={category}
           onClick={() => handleCategoryChange(category)}
           className={cn(
-            "px-4 py-2 text-sm rounded-md whitespace-nowrap",
+            "px-4 py-2 text-sm rounded-md whitespace-nowrap cursor-pointer",
             currentCategory === category
               ? "bg-gray-800 text-white"
               : "bg-gray-100 text-gray-800 hover:bg-gray-200"

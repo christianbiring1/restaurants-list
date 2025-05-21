@@ -44,6 +44,7 @@ export function RestaurantCard({
   });
 
   const toggleFavorite = () => {
+    console.log("the product Id", id);
     mutate({ id });
   };
 
@@ -59,7 +60,7 @@ export function RestaurantCard({
         />
         <button
           onClick={toggleFavorite}
-          className="absolute bottom-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
+          className="absolute top-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white transition-colors cursor-pointer"
           aria-label={
             initialIsFavorite ? "Remove from favorites" : "Add to favorites"
           }
