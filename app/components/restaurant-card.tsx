@@ -1,10 +1,9 @@
 "use client";
-
-import Image from "next/image";
 import { Heart, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { textByStoreCategory } from "@/constants/categories";
 import { trpc } from "@/utils/trpc";
+import { ImageCarousel } from "./image-carousel";
 
 interface RestaurantCardProps {
   id: string;
@@ -44,23 +43,16 @@ export function RestaurantCard({
   });
 
   const toggleFavorite = () => {
-    console.log("the product Id", id);
     mutate({ id });
   };
 
   return (
     <div className="flex flex-col rounded-lg overflow-hidden">
       <div className="relative">
-        <Image
-          src={images[0] || "/placeholder.svg"}
-          alt={name}
-          width={400}
-          height={250}
-          className="w-full h-48 object-cover"
-        />
+        <ImageCarousel images={images} alt={name} />
         <button
           onClick={toggleFavorite}
-          className="absolute top-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white transition-colors cursor-pointer"
+          className="absolute bottom-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
           aria-label={
             initialIsFavorite ? "Remove from favorites" : "Add to favorites"
           }
