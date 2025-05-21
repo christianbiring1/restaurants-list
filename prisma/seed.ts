@@ -1,5 +1,4 @@
 import { PrismaClient, StoreCategory } from "@prisma/client";
-// import { STORE_CATEGORY } from "@/constants/categories";
 
 const prisma = new PrismaClient();
 

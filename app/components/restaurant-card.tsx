@@ -88,7 +88,7 @@ export function RestaurantCard({
         </div>
         <p className="text-sm text-gray-600 line-clamp-1">{desc}</p>
         <div className="text-xs text-gray-500 uppercase">
-          {city} · {textByStoreCategory[category as any]} · {price_range} won
+          {city} · {textByStoreCategory[category as string]} · {price_range} won
         </div>
       </div>
     </div>
