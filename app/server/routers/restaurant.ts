@@ -22,6 +22,8 @@ export const restaurantRouter = router({
           : {}),
       };
 
+      console.log("categories >>>>>", input);
+
       const restaurants = await prisma.restaurant.findMany({
         where,
         include: {
@@ -35,7 +37,7 @@ export const restaurantRouter = router({
       }));
     }),
 
-  toggleFavorite: publicProcedure
+  toggleFavoriteRestaurant: publicProcedure
     .input(z.object({ id: z.string() }))
     .mutation(async ({ input }) => {
       const favorite = await prisma.favorite.findFirst({
