@@ -1,7 +1,11 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { textByStoreCategory, popularCategories } from "@/constants/categories";
+import {
+  textByStoreCategory,
+  popularCategories,
+  type STORE_CATEGORY,
+} from "@/constants/categories";
 import { cn } from "@/lib/utils";
 
 export function CategoryFilter() {
@@ -38,13 +42,13 @@ export function CategoryFilter() {
           key={category}
           onClick={() => handleCategoryChange(category)}
           className={cn(
-            "px-4 py-2 text-sm rounded-md whitespace-nowrap cursor-pointer",
+            "px-4 py-2 text-sm rounded-md whitespace-nowrap",
             currentCategory === category
               ? "bg-gray-800 text-white"
               : "bg-gray-100 text-gray-800 hover:bg-gray-200"
           )}
         >
-          {textByStoreCategory[category as any]}
+          {textByStoreCategory[category as keyof typeof STORE_CATEGORY]}
         </button>
       ))}
     </div>

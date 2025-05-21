@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { Heart, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { textByStoreCategory } from "@/constants/categories";
@@ -35,15 +36,20 @@ export function RestaurantCard({
   featured,
   isFavorite: initialIsFavorite,
 }: RestaurantCardProps) {
+  const [isFavorite, setIsFavorite] = useState(initialIsFavorite);
+
   const utils = trpc.useUtils();
-  const { mutate } = trpc.restaurant.toggleFavorite.useMutation({
-    onSuccess: () => {
+  const { mutate } = trpc.restaurant.toggleFavoriteRestaurant.useMutation({
+    onSuccess: (data) => {
+      console.log("mutation >>>>>");
+      setIsFavorite(data.isFavorite);
       utils.restaurant.getAll.invalidate();
     },
   });
 
   const toggleFavorite = () => {
     mutate({ id });
+    setIsFavorite(!isFavorite);
   };
 
   return (
@@ -60,7 +66,7 @@ export function RestaurantCard({
           <Heart
             className={cn(
               "w-5 h-5",
-              initialIsFavorite ? "fill-red-500 text-red-500" : "text-gray-500"
+              isFavorite ? "fill-red-500 text-red-500" : "text-gray-500"
             )}
           />
         </button>

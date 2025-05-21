@@ -3,16 +3,25 @@
 import { trpc } from "@/utils/trpc";
 import { RestaurantCard } from "./restaurant-card";
 import { useSearchParams } from "next/navigation";
+import { useMemo } from "react";
 
 export function RestaurantList() {
   const searchParams = useSearchParams();
-  const category = searchParams.get("category") || "entire";
-  const search = searchParams.get("search") || "";
 
-  const { data: restaurants, isLoading } = trpc.restaurant.getAll.useQuery({
-    category: category === "entire" ? undefined : category,
-    search: search || undefined,
-  });
+  const queryInput = useMemo(() => {
+    const category = searchParams.get("category");
+    const search = searchParams.get("search");
+
+    return {
+      category: category && category !== "entire" ? category : undefined,
+      search: search || undefined,
+    };
+  }, [searchParams]);
+
+  console.log("Query input >>>>", queryInput);
+
+  const { data: restaurants, isLoading } =
+    trpc.restaurant.getAll.useQuery(queryInput);
 
   if (isLoading) {
     return (
@@ -36,8 +45,6 @@ export function RestaurantList() {
       </div>
     );
   }
-
-  console.log("restaurant >>>>>>>>", restaurants.json);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
