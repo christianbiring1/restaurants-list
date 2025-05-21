@@ -22,8 +22,13 @@ const eslintConfig = [
           "ts-ignore": false,
           "ts-nocheck": false,
           "ts-check": false,
-          "no-explicit-any": false,
           minimumDescriptionLength: 3,
+          "@typescript-eslint/no-explicit-any": [
+            "error",
+            {
+              ignoreRestArgs: true,
+            },
+          ],
         },
       ],
     },
