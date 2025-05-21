@@ -16,7 +16,7 @@ const restaurants = [
       "https://images.unsplash.com/photo-1628294896516-344152572ee8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
     name: "Kagurazaka Ishikawa Sushi Haru Nakanoshima Sushi",
-    price_range: "3~5",
+    price_range: "3000 ~ 5000",
     featured: {
       text: "Top Yakitori Restaurant in Nakanoshima",
       icon: "stars-02",
@@ -35,7 +35,7 @@ const restaurants = [
       "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3VzaGl8ZW58MHx8MHx8fDA%3D",
     ],
     name: "Sushi Ginza Ishikawa",
-    price_range: "4~6",
+    price_range: "4000 ~ 6000",
     featured: {
       text: "Top Sushi Restaurant in Tokyo",
       icon: "stars-02",
@@ -54,7 +54,7 @@ const restaurants = [
       "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D",
     ],
     name: "Ichiran Ramen",
-    price_range: "2~4",
+    price_range: "2000 ~ 4000",
     featured: {
       text: "Kyoto's Famous Ramen Spot",
       icon: "stars-02",
@@ -72,7 +72,7 @@ const restaurants = [
       "https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D",
     ],
     name: "Tempura Matsuya",
-    price_range: "3~5",
+    price_range: "3000 ~ 5000",
     featured: {
       text: "Best Tempura in Nagoya",
       icon: "stars-02",
@@ -90,7 +90,7 @@ const restaurants = [
       "https://images.unsplash.com/photo-1657375624237-d1d1ce037c64?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D",
     ],
     name: "Udon Taro",
-    price_range: "2~4",
+    price_range: "2000 ~ 4000",
     featured: {
       text: "Fukuoka's Best Udon Restaurant",
       icon: "stars-02",
